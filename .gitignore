@@ -1,0 +1,9 @@
+# dependencies
+/node_modules
+.next
+
+# production
+/build
+
+# testing
+/tests/__snapshots__
