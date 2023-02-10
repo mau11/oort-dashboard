@@ -1,6 +1,4 @@
-# Title of Project/App
-
-> Quick description.
+# Oort Dashboard
 
 ## Table of Contents
 
@@ -15,7 +13,7 @@
 
 ## Usage
 
-> Quick explanation of usage
+> Password protected access to a sortable list of EC2 instances.
 
 ## Requirements
 
@@ -50,9 +48,9 @@ For development, in your browser, navigate to
 http://localhost:3000
 ```
 
-View the latest deploy at: https://......
+View the latest deploy at: https://main.d24rb4l8t0k5hf.amplifyapp.com
 
-#### Resources
+## Resources
 
 To configure AWS amplify authentication, see documentation below:
 https://ui.docs.amplify.aws/react/connected-components/authenticator/configuration
