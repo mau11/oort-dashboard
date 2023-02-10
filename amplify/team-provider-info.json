@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-oortdash-dev-32226-authRole",
+      "UnauthRoleArn": "arn:aws:iam::388045050994:role/amplify-oortdash-dev-32226-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::388045050994:role/amplify-oortdash-dev-32226-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-oortdash-dev-32226-deployment",
+      "UnauthRoleName": "amplify-oortdash-dev-32226-unauthRole",
+      "StackName": "amplify-oortdash-dev-32226",
+      "StackId": "arn:aws:cloudformation:us-east-1:388045050994:stack/amplify-oortdash-dev-32226/0e0f5e20-a91c-11ed-a8ea-126309c7b937",
+      "AmplifyAppId": "d24rb4l8t0k5hf"
+    },
+    "categories": {
+      "auth": {
+        "oortdash": {}
+      }
+    }
+  }
+}

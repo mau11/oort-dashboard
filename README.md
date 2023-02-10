@@ -8,11 +8,10 @@
 1. [Requirements](#requirements)
 1. [Development](#development)
     1. [Installing Dependencies](#installing-dependencies)
-    1. [Setting up ______ Database](#setting-up-______-database)
     1. [Build and Serve App](#build-and-serve-app)
     1. [Run Tests](#run-tests)
-1. [Contributing](#contributing)
 1. [View Application](#view-application)
+1. [Resources](#resources)
 
 ## Usage
 
@@ -33,10 +32,6 @@ From within the root directory:
 $ yarn add
 ```
 
-#### Setting up ______ Database
-1. Create a database named '____'.
-1. In '____', use the following queries to create X tables:
-
 #### Build and Serve App
 From root directory
 ```
@@ -56,3 +51,8 @@ http://localhost:3000
 ```
 
 View the latest deploy at: https://......
+
+#### Resources
+
+To configure AWS amplify authentication, see documentation below:
+https://ui.docs.amplify.aws/react/connected-components/authenticator/configuration

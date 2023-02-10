@@ -3,7 +3,7 @@
  */
 
 import { cleanup, render } from '@testing-library/react';
-import Home from '../src/components/home';
+import Home from '../src/components/layout';
 
 afterEach(cleanup);
 
@@ -13,3 +13,10 @@ describe('Home component', () => {
         expect(asFragment()).toMatchSnapshot();
     });
 });
+
+
+// admin
+// securePW23!
+
+// test
+// Password1!

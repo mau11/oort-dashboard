@@ -1,3 +1,3 @@
-import Home from '@app/home';
+import Admin from '@app/admin';
 
-export default Home;
+export default Admin;
