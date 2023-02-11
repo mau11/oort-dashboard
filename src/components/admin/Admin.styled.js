@@ -35,5 +35,7 @@ export const Row = styled.div`
 
 Row.Item = styled.div`
     min-width: ${props => props.lg ? '186' : '136'}px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;

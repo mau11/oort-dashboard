@@ -8,7 +8,8 @@ export default function Pagination({ itemsPerPage, page, items, setPage }) {
     return (
         <>
             {currentItems.map(row => {
-                const {name, id, type, state, az, public_ip, private_ip, monitoring} = row;
+                const {name, id, type, state, az, public_ip, private_ip, monitoring, launch_time} = row;
+                const time = launch_time.toString();
                 return (
                     <Row key={id}>
                         <Row.Item>{name}</Row.Item>
@@ -19,6 +20,7 @@ export default function Pagination({ itemsPerPage, page, items, setPage }) {
                         <Row.Item>{public_ip}</Row.Item>
                         <Row.Item>{private_ip}</Row.Item>
                         <Row.Item>{monitoring}</Row.Item>
+                        <Row.Item lg>{time}</Row.Item>
                     </Row>
                 )
             })}

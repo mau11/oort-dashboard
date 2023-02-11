@@ -48,6 +48,7 @@ export default function Admin() {
                 <Header.Item onClick={() => handleSort('public_ip')}>Public IP</Header.Item>
                 <Header.Item onClick={() => handleSort('private_ip')}>Private IP</Header.Item>
                 <Header.Item onClick={() => handleSort('monitoring')}>Monitoring</Header.Item>
+                <Header.Item lg onClick={() => handleSort('launch_time')}>Launch Time</Header.Item>
             </Header>
             <List>
                 <Pagination
