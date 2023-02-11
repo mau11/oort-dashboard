@@ -12,18 +12,18 @@ function createFakeInstance() {
     }
 
     return {
-        name: faker.word.noun(10), //Name
+        name: faker.word.noun(10),
         id: faker.internet.password(19, false, /[a-z0-9]/, 'i-0'),
         type: selectRandom(instanceTypes),
-        state: selectRandom(['running', 'stopping', 'terminated']), //Instance state
-        az: selectRandom(['us-east-1a', 'us-east-1e', 'us-west-2c', 'us-west-2d']), //Availability zone
-        public_ip: faker.internet.ipv4(), //Public IP
-        private_ip: '10.20.30.40', //Private IP
+        state: selectRandom(['running', 'stopping', 'terminated']),
+        az: selectRandom(['us-east-1a', 'us-east-1e', 'us-west-2c', 'us-west-2d']),
+        public_ip: faker.internet.ipv4(),
+        private_ip: '10.20.30.40',
         monitoring: selectRandom(['enabled', 'disabled']),
-        launch_time: faker.date.past(5, '2020-01-01T00:00:00.000Z'), //'2023/02/10 07:11 GMT-5'
+        launch_time: faker.date.past(5, '2020-01-01T00:00:00.000Z'),
     };
 }
 
-Array.from({ length: 5 }).forEach(() => {
+Array.from({ length: 125 }).forEach(() => {
     fakeInstances.push(createFakeInstance());
 });

@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import { fakeInstances } from 'utils/fakeDataGenerator';
+import Pagination from './Pagination';
 import {
     Wrapper,
     Header,
     List,
-    Row
 } from './Admin.styled';
 
 export default function Admin() {
+    const [page, setPage] = useState(0);
     const [instances, setInstances] = useState(fakeInstances);
     const [sortOrder, setSortOrder] = useState({
         name: 1,
@@ -33,7 +34,7 @@ export default function Admin() {
         })
 
         setSortOrder({...sortOrder, [attr]: sortOrder[attr] * -1});
-        setInstances([...sorted]);
+        setInstances(sorted);
     }
 
     return (
@@ -49,21 +50,12 @@ export default function Admin() {
                 <Header.Item onClick={() => handleSort('monitoring')}>Monitoring</Header.Item>
             </Header>
             <List>
-                {instances.map(row => {
-                    const {name, id, type, state, az, public_ip, private_ip, monitoring} = row;
-                    return (
-                        <Row key={id}>
-                            <Row.Item>{name}</Row.Item>
-                            <Row.Item lg>{id}</Row.Item>
-                            <Row.Item>{type}</Row.Item>
-                            <Row.Item>{state}</Row.Item>
-                            <Row.Item>{az}</Row.Item>
-                            <Row.Item>{public_ip}</Row.Item>
-                            <Row.Item>{private_ip}</Row.Item>
-                            <Row.Item>{monitoring}</Row.Item>
-                        </Row>
-                    )
-                })}
+                <Pagination
+                    page={page}
+                    setPage={setPage}
+                    items={instances}
+                    itemsPerPage={10}
+                />
             </List>
         </Wrapper>
     )
