@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {breakpoints} from 'utils/breakpoints';
+import { breakpoints } from '@utils/breakpoints';
 
 export const Wrapper = styled.div`
     padding: 8px;
