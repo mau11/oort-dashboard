@@ -6,6 +6,7 @@ import {
 } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 import awsExports from '../aws-exports';
+import Meta from '@app/Meta';
 
 export default function App({ Component }) {
 
@@ -16,15 +17,18 @@ export default function App({ Component }) {
             username: {
                 placeholder: 'Enter your username',
             },
+            password: {
+                placeholder: 'Enter your password',
+            },
         },
     };
 
     const components = {
         Header() {
-            return <></>
+            return <></>;
         },
         Footer() {
-            return <></>
+            return <></>;
         },
         SignIn: {
             Header() {
@@ -33,31 +37,30 @@ export default function App({ Component }) {
                 return (
                     <Heading
                         padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
-                        level={3}
+                        level={5}
                     >
-                        Sign in
+                        Sign in to view EC2 Dashboard
                     </Heading>
                 )
             },
             Footer() {
-                return  <></>
+                return <></>;
             },
         },
     };
 
     return (
-        <Authenticator
-            formFields={formFields}
-            components={components}
-            hideSignUp={true}
-        >
-            {({ signOut, user }) => (
-                <>
-                    <h1>Hello {user.username}</h1>
-                    <button onClick={signOut}>Sign out</button>
-                    <Component />
-                </>
-            )}
-        </Authenticator>
+        <>
+            <Meta />
+            <Authenticator
+                formFields={formFields}
+                components={components}
+                hideSignUp={true}
+            >
+                {({ signOut, user }) => (
+                    <Component signOut={signOut} username={user.username}/>
+                )}
+            </Authenticator>
+        </>
     )
 }

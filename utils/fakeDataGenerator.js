@@ -20,10 +20,9 @@ function createFakeInstance() {
         public_ip: faker.internet.ipv4(),
         private_ip: '10.20.30.40',
         monitoring: selectRandom(['enabled', 'disabled']),
-        launch_time: faker.date.past(5, '2020-01-01T00:00:00.000Z'),
     };
 }
 
-Array.from({ length: 125 }).forEach(() => {
+Array.from({ length: 175 }).forEach(() => {
     fakeInstances.push(createFakeInstance());
 });

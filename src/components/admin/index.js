@@ -3,11 +3,13 @@ import { fakeInstances } from 'utils/fakeDataGenerator';
 import Pagination from './Pagination';
 import {
     Wrapper,
-    Header,
+    Nav,
+    Title,
+    Button,
     List,
 } from './Admin.styled';
 
-export default function Admin() {
+export default function Admin({signOut, username}) {
     const [page, setPage] = useState(0);
     const [instances, setInstances] = useState(fakeInstances);
     const [sortOrder, setSortOrder] = useState({
@@ -39,23 +41,18 @@ export default function Admin() {
 
     return (
         <Wrapper>
-            <Header>
-                <Header.Item onClick={() => handleSort('name')}>Name</Header.Item>
-                <Header.Item lg onClick={() => handleSort('id')}>Instance ID</Header.Item>
-                <Header.Item onClick={() => handleSort('type')}>Instance Type</Header.Item>
-                <Header.Item onClick={() => handleSort('state')}>State</Header.Item>
-                <Header.Item onClick={() => handleSort('az')}>Availability Zone</Header.Item>
-                <Header.Item onClick={() => handleSort('public_ip')}>Public IP</Header.Item>
-                <Header.Item onClick={() => handleSort('private_ip')}>Private IP</Header.Item>
-                <Header.Item onClick={() => handleSort('monitoring')}>Monitoring</Header.Item>
-                <Header.Item lg onClick={() => handleSort('launch_time')}>Launch Time</Header.Item>
-            </Header>
+            <Nav>
+                <Nav.Text>Logged in as: {username}</Nav.Text>
+                <Button onClick={signOut}>Sign out</Button>
+            </Nav>
+            <Title>EC2 Instances</Title>
             <List>
                 <Pagination
                     page={page}
                     setPage={setPage}
                     items={instances}
-                    itemsPerPage={10}
+                    itemsPerPage={12}
+                    handleSort={handleSort}
                 />
             </List>
         </Wrapper>
