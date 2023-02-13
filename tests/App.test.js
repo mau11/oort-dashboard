@@ -58,6 +58,5 @@ describe('Pagination component', () => {
         expect(getByText('Previous')).toBeEnabled();
         expect(screen.queryByText('Next')).toBeNull();
         expect(setPage).toHaveBeenCalledWith(1);
-
     });
 });

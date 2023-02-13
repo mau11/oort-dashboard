@@ -24,12 +24,6 @@ export default function App({ Component }) {
     };
 
     const components = {
-        Header() {
-            return <></>;
-        },
-        Footer() {
-            return <></>;
-        },
         SignIn: {
             Header() {
                 const { tokens } = useTheme();
@@ -43,6 +37,7 @@ export default function App({ Component }) {
                     </Heading>
                 )
             },
+            // hide forget password flow
             Footer() {
                 return <></>;
             },
